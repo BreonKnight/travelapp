@@ -1,0 +1,37 @@
+<h1>Sign Up</h1>
+<hr>
+
+<% flash.each do |name, msg| %>
+    <div class="alert <%= name == 'error' ? 'alert-danger' : 'alert-info' %>">
+      <div class="container">
+        <%= msg %>
+      </div>
+    </div>
+  <% end %>
+
+<div class="form-group">
+<%= form_for @user do |f| %>
+  <%= f.label(:first_name, "First Name") %>
+  <%= f.text_field :first_name, class: "form-control", placeholder: "John" %>
+  <br>
+    <%= f.label(:last_name, "Last Name") %>
+  <%= f.text_field :last_name, class: "form-control", placeholder: "Doe" %>
+  <br>
+  <%= f.label(:email, "Email") %>
+  <%= f.email_field :email, class: "form-control", placeholder: "email@example.com" %>
+  <br>
+  <%= f.label(:password, "Password") %>
+  <%= f.password_field :password, class: "form-control", placeholder: "your password" %>
+  <br>
+  <%= f.label(:password, "Password Confirmation") %>
+  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "confirm password" %>
+  <br>
+  <%= f.label(:current_city, "Current City") %>
+  <%= f.text_field :current_city, class: "form-control", placeholder: "your current city" %>
+  <br>
+  <%= f.submit "Sign Up", class: "btn btn-block btn-default" %>
+<% end %>
+</div>
+
+<br>
+<p>Already have an account? <a href="/login">Click here</a> to log in.</p>
