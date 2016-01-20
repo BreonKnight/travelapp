@@ -24,6 +24,11 @@ class UsersController < ApplicationController
   def show
   end
 
+  # def profile
+  #   user_id = current_user.id
+  #   @user = User.find_by_id(user_id)
+  # end
+
   def edit
   end
 
@@ -41,7 +46,7 @@ class UsersController < ApplicationController
   private
 
   def set_user
-    user_id = params[:id]
+    user_id = params[:id] || current_user.id
     @user = User.find_by_id(user_id)
   end
 
