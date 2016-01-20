@@ -19,7 +19,9 @@ class EntriesController < ApplicationController
   end
 
   def show
-    @entry = Entry.find(params[:id])
+    @entry = Entry.find(params[:id]) 
+    @user = @entry.user
+
     render :show
   end
 
@@ -49,6 +51,7 @@ class EntriesController < ApplicationController
   end
 
   private
+
   def entry_params
     params.require(:entry).permit(:title, :body)
   end
