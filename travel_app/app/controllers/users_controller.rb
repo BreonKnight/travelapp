@@ -26,6 +26,17 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def update
+    user_params = params.require(:user).permit(:first_name, :last_name, :current_city)
+    if @user.update(user_params)
+      redirect_to user_path(@user)
+    else
+      flash[:error] = @user.errors.full_messages.join(", ")
+      redirect_to edit_user_path(@user)
+    end
+
+  end
+
   private
 
   def set_user
