@@ -3,5 +3,3 @@
 <h3 class="text-center"><%= @entry.title %></h3>
 <h4 class="text-center">by <%= @user.first_name %> <%= @user.last_name %></h4>
 <p class="text-center"><%= @entry.body %></p>
-<%= button_to "Delete", @entry, method: :delete %>
-<%= button_to "Edit", @entry, method: :get %>

@@ -1,13 +1,21 @@
 <h1>Login</h1>
 <hr>
 
+<% flash.each do |name, msg| %>
+    <div class="alert <%= name == 'error' ? 'alert-danger' : 'alert-info' %>">
+      <div class="container">
+        <%= msg %>
+      </div>
+    </div>
+  <% end %>
+
 <div class="form-group">
 <%= form_for @user, url: "/sessions", method: "post" do |f| %>
   <%= f.label(:email, "Email") %>
-  <%= f.email_field :email, class: "form-control", placeholder: "email@example.com" %>
+  <%= f.email_field :email, class: "form-control", placeholder: "email@example.com", :required => true %>
   <br>
   <%= f.label(:password, "Password") %>
-  <%= f.password_field :password, class: "form-control", placeholder: "your password" %>
+  <%= f.password_field :password, class: "form-control", placeholder: "your password", :required => true %>
   <br>
   <%= f.submit "Login", class: "btn btn-block btn-default" %>
 <% end %>
