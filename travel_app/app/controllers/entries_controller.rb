@@ -23,6 +23,19 @@ class EntriesController < ApplicationController
 		render :show
 	end
 
+	def edit
+		entry_id = params[:id]
+		@entry = Entry.find_by_id(entry_id)
+		render :edit
+
+	end
+
+	def update
+
+	end
+
+	def destroy
+
 	private
 	def entry_params
 		params.require(:entry).permit(:title, :body)
