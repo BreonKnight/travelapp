@@ -1,0 +1,8 @@
+<div class="container entrynew">
+<%= form_for @entries do |f| %>
+	<%= f.text_field :title, class: "form-control", placeholder: "Title" %>
+	<%= f.text_field :body, class: "form-control", placeholder: "Body" %>
+	<%= f.submit "Submit Entry", class: "btn btn-block btn-default" %>
+
+<% end %> 
+</div>
