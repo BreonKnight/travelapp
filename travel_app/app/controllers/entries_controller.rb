@@ -30,10 +30,21 @@ class EntriesController < ApplicationController
   end
 
   def update
+    entry_id = params[:id]
 
+    entry = Entry.find_by_id(entry_id)
+
+    entry.update_attributes(entry_params)
+    redirect_to entry_path(entry)
   end
 
   def destroy
+    entry_id = params[:id]
+    entry = Entry.find_by_id(entry_id)
+
+    entry.destroy
+
+    redirect_to entries_path
 
   end
 
