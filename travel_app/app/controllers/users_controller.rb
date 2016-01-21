@@ -9,9 +9,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city)
+    user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :current_city_id, :home_city_id, :avatar)
     @user = User.new(user_params)
-
     if @user.save
       login(@user)
       redirect_to user_path(@user)
@@ -34,7 +33,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    user_params = params.require(:user).permit(:first_name, :last_name, :current_city)
+    user_params = params.require(:user).permit(:first_name, :last_name, :current_city, :avatar)
     if @user.update(user_params)
       redirect_to user_path(@user)
     else
