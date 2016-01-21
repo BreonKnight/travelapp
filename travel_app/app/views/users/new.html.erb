@@ -13,13 +13,19 @@
   <%= f.email_field :email, class: "form-control", placeholder: "email@example.com", :required => true %>
   <br>
   <%= f.label(:password, "Password") %>
-  <%= f.password_field :password, class: "form-control", placeholder: "your password", :required => true %>
+  <%= f.password_field :password, class: "form-control", placeholder: "Your password", :required => true %>
   <br>
   <%= f.label(:password, "Password Confirmation") %>
-  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "confirm password", :required => true %>
+  <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password", :required => true %>
   <br>
-  <%= f.label(:current_city, "Current City") %>
-  <%= f.text_field :current_city, class: "form-control", placeholder: "your current city" %>
+  <%= f.label :current_city_id, "Your current city" %><br>
+  <%= f.select :current_city_id, City.all.collect { |c| [ c.name, c.id ] }, include_blank: false %>
+  <br>
+  <%= f.label :home_city_id, "Your home city" %><br>
+  <%= f.select :home_city_id, City.all.collect { |c| [ c.name, c.id ] }, include_blank: false %>
+  <br>
+  <%= f.label(:avatar, "Avatar") %>
+  <%= f.file_field :avatar %>
   <br>
   <%= f.submit "Sign Up", class: "btn btn-block btn-default" %>
 <% end %>
