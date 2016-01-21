@@ -4,8 +4,9 @@ Rails.application.routes.draw do
  get "/profile", to: "users#show"
 
  resources :users
- resources :entries
- resources :cities, except: [:index]
+ resources :cities, except: [:index] do
+   resources :entries
+ end
 
  get "/login", to: "sessions#new"
 
