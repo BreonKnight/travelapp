@@ -1,18 +1,46 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+ @import url('https://fonts.googleapis.com/css?family=Nothing+You+Could+Do|Source+Sans+Pro:400,700,600,400italic');
+$purple: #8A8DDC;
+$purple2: #88A0DD;
+$blue : #7FB3DC;
+$blue2: #87CDDD;
+$teal: #87DCD4;
+$black: #000;
+$white: #FFF;
+
+
 body{
     padding-top: 0px;
+    background-color: $blue;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 
+.usercard{
+    font-family: 'Nothing You Could Do', cursive;
+}
+
+.world{
+    background-color: $blue2;
+    color: $white;
+    height: 80px;
+    padding-top: 18px;
+    font-family: 'Nothing You Could Do', cursive;
+}
+
+#jumbo{
+    background-color:white;
+    font-family: 'Nothing You Could Do', cursive;
+}
 .jumbotron{
     margin-bottom: 0;
 }
 
 #flypic{
-    height: 400px;
+    height: 660px;
     border-top: 2px solid white;
-    background-color: black;
+    background-color: $blue2;
     color:white
 }
 
@@ -25,8 +53,17 @@ body{
 }
 
 .navbar{
-	background-color: black;
-  margin-bottom: 0;
+    background-color: $blue2;
+    margin-bottom: 0;
+    color: $white;
+}
+
+.navbar-default .navbar-brand{
+    color:white;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: white;
 }
 
 li{

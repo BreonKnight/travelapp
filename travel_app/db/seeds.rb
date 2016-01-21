@@ -17,8 +17,8 @@
   user_params[:last_name] = FFaker::Name.last_name
 
   city_params = Hash.new
-  city_params[:email] = FFaker::Address.city
-  city_params[:password]  = FFaker::Address.country
+  city_params[:name] = FFaker::Address.city
+  city_params[:country]  = FFaker::Address.country
 
   # save the user
   new_user = User.create(user_params)
