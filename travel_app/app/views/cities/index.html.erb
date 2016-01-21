@@ -1,14 +1,17 @@
-<div class="jumbotron">
-	<h1 class="text-center">Travel With Us</h1>
+<div class="jumbotron" id="jumbo">
+	<h1 class="text-center">Travel With Me</h1>
 </div>
 
 <div class="jumbotron" id="flypic">
-	<div class="text-center"><%= image_tag "/images/1.jpg" %></div>
+	<div class="container">
+		<div>
+			<%= image_tag("/images/1.jpg",:class => "img-responsive center-block" ) %>
+		</div>
+	</div>
 </div>
 
 <div>
-	<h2>Cities Around the World</h2>
-	<hr>
+	<h1 class="world text-center">Cities Around the World</h1>
 	<% @cities.each do |city| %>
 	<%= city.name %> <%= city.country %>
 	<br>
