@@ -25,11 +25,6 @@ class UsersController < ApplicationController
     @entries = @user.entries
   end
 
-  # def profile
-  #   user_id = current_user.id
-  #   @user = User.find_by_id(user_id)
-  # end
-
   def edit
     if current_user == set_user
       render :edit
