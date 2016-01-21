@@ -2,3 +2,11 @@
 <hr>
 
 <%= image_tag @city.img_url, size: "320x426" %>
+<br>
+<br>
+
+
+<% @entries.each do |entry| %>
+	  <%= link_to entry.title, city_entry_path(entry.city_id, entry) %>
+	  	<br>
+<% end %>
