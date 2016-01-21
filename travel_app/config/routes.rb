@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
  resources :users
  resources :entries
+ resources :cities
 
  get "/login", to: "sessions#new"
 

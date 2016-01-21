@@ -16,8 +16,14 @@
   user_params[:first_name] = FFaker::Name.first_name
   user_params[:last_name] = FFaker::Name.last_name
 
+  city_params = Hash.new
+  city_params[:email] = FFaker::Address.city
+  city_params[:password]  = FFaker::Address.country
+
   # save the user
   new_user = User.create(user_params)
+  # save the city
+  new_city = City.create(city_params)
 
   # create 10 articles for each user
   2.times do
