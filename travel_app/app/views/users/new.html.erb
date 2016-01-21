@@ -1,6 +1,14 @@
 <h1>Sign Up</h1>
 <hr>
 
+<% flash.each do |name, msg| %>
+    <div class="alert <%= name == 'error' ? 'alert-danger' : 'alert-info' %>">
+      <div class="container">
+        <%= msg %>
+      </div>
+    </div>
+  <% end %>
+
 <div class="form-group">
 <%= form_for @user do |f| %>
   <%= f.label(:first_name, "First Name") %>
@@ -30,14 +38,6 @@
   <%= f.submit "Sign Up", class: "btn btn-block btn-default" %>
 <% end %>
 </div>
-
-<% flash.each do |name, msg| %>
-    <div class="alert <%= name == 'error' ? 'alert-danger' : 'alert-info' %>">
-      <div class="container">
-        <%= msg %>
-      </div>
-    </div>
-  <% end %>
 
 <br>
 <p>Already have an account? <a href="/login">Click here</a> to log in.</p>
