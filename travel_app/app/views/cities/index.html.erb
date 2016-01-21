@@ -1,6 +1,16 @@
-<h2>Cities Around the World</h2>
-<hr>
-<% @cities.each do |city| %>
-<%= city.name %> <%= city.country %>
-<br>
-<% end %>
+<div class="jumbotron">
+	<h1 class="text-center">Travel With Us</h1>
+</div>
+
+<div class="jumbotron" id="flypic">
+	<div class="text-center"><%= image_tag "/images/1.jpg" %></div>
+</div>
+
+<div>
+	<h2>Cities Around the World</h2>
+	<hr>
+	<% @cities.each do |city| %>
+	<%= city.name %> <%= city.country %>
+	<br>
+	<% end %>
+</div>
