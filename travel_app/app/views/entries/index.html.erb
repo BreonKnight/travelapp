@@ -1,1 +1,7 @@
-<h1>Hey</h1>
+<h1><%= @city.name %> Entries</h1>
+<hr>
+
+<% @entries.each do |entry| %>
+	  <%= link_to entry.title, city_entry_path(entry.city_id, entry) %>
+	  	<br>
+<% end %>

@@ -1,7 +1,7 @@
 class EntriesController < ApplicationController
   def index
-    @entries = Entry.all
-    render :index
+    @city = City.find_by_id(params[:city_id])
+    @entries = @city.entries
   end
 
   def new
