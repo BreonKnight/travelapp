@@ -1,7 +1,8 @@
 <div class="container entrynew">
-<%= form_for @entries do |f| %>
+
+<%= form_for @entry, url: city_entries_path do |f| %>
 	<%= f.text_field :title, class: "form-control", placeholder: "Title" %>
-	<%= f.text_field :body, class: "form-control", placeholder: "Body" %>
+	<%= f.text_area :body, class: "form-control", placeholder: "Body", :required => true %>
 	<%= f.submit "Submit Entry", class: "btn btn-block btn-default" %>
 
 <% end %> 

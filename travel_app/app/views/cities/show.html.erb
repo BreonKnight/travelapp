@@ -4,9 +4,13 @@
 <%= image_tag @city.img_url, size: "320x426" %>
 <br>
 <br>
+<%= link_to "Add Entry", new_city_entry_path(@city), class: "btn btn-default" %>
+<br>
+<br>
 
 
-<% @entries.each do |entry| %>
+
+<% @entries.reverse.each do |entry| %>
 	  <%= link_to entry.title, city_entry_path(entry.city_id, entry) %>
 	  	<br>
 <% end %>

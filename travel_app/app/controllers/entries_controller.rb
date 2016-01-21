@@ -1,20 +1,24 @@
 class EntriesController < ApplicationController
+  before_action :logged_in?, except: [:index]
+
   def index
     @city = City.find_by_id(params[:city_id])
     @entries = @city.entries
   end
 
   def new
-    @entries = Entry.new
+    @entry = Entry.new
   end
 
   def create
     @entry = Entry.new(entry_params)
+    @city = City.find_by_id(params[:city_id])
+    @entry.city = @city
+    @entry.user = current_user
     if @entry.save
-      redirect_to '/'
+      redirect_to city_path(@city)
     else
-    flash[:error] = "Successfully failed bit..."
-    redirect_to new_entry_path
+    redirect_to new_city_entry_path
     end
   end
 
