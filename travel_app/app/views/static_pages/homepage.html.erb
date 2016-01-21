@@ -6,6 +6,7 @@
 <h2>Cities Around the World</h2>
 <hr>
 <% @cities.each do |city| %>
+<%= link_to(city) do %>
 <%= city.name %> <%= city.country %>
 <br>
 <% end %>
