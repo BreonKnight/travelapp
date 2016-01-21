@@ -3,5 +3,11 @@
 </div>
 
 <div class="jumbotron" id="flypic">
+<h2>Cities Around the World</h2>
+<hr>
+<% @cities.each do |city| %>
+<%= city.name %> <%= city.country %>
+<br>
+<% end %>
 	<div class="text-center"><%= image_tag "/images/1.jpg" %></div>
 </div>
