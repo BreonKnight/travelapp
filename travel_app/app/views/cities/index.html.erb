@@ -13,7 +13,9 @@
 <div>
 	<h1 class="world text-center">Cities Around the World</h1>
 	<% @cities.each do |city| %>
+	<%= link_to(city) do %>
 	<%= city.name %> <%= city.country %>
 	<br>
+	<% end %>
 	<% end %>
 </div>
