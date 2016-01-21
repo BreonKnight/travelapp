@@ -31,6 +31,11 @@ class UsersController < ApplicationController
   # end
 
   def edit
+    if current_user == set_user
+      render :edit
+    else
+      redirect_to user_path(current_user)
+    end
   end
 
   def update

@@ -47,7 +47,6 @@ class EntriesController < ApplicationController
     entry.destroy
 
     redirect_to entries_path
-
   end
 
   private
