@@ -10,10 +10,17 @@ $teal: #87DCD4;
 $black: #000;
 $white: #FFF;
 
+$deepBlue: #1F3AB2;
+$deepBlue1: #357DAF;
+$teal: #1685B2;
+$lightTeal: #1FAEB2;
+$seaFoam: #1FB28C;
+
+
 
 body{
     padding-top: 0px;
-    background-color: $blue;
+    background-color: $white;
     font-family: 'Source Sans Pro', sans-serif;
 }
 
@@ -22,7 +29,7 @@ body{
 }
 
 .world{
-    background-color: $blue2;
+    background-color: $deepBlue1;
     color: $white;
     height: 80px;
     padding-top: 18px;
@@ -38,9 +45,9 @@ body{
 }
 
 #flypic{
-    height: 660px;
+    height: 550px;
     border-top: 2px solid white;
-    background-color: $blue2;
+    background-color: $white;
     color:white
 }
 
@@ -53,7 +60,7 @@ body{
 }
 
 .navbar{
-    background-color: $blue2;
+    background-color: #357DAF;
     margin-bottom: 0;
     color: $white;
 }
