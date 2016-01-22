@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :logged_in?, only: [:show, :edit, :update]
   before_action :set_user, except: [:index, :new, :create]
 
   def index
