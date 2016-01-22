@@ -10,16 +10,17 @@
 	</div>
 </div>
 
-<div>
-	<h1 class="world text-center">Cities Around the World</h1>
-	<% @cities.each do |city| %>
-	<div class="image">
-	<%= link_to(city) do %>
-  		<%= content_tag(:div) do %>
-   	 		<%= image_tag city.img_url, size: "320x426" %>
-   	 		<h2> <span><%= city.name %></span></h2>
-  		<% end %>
-	<% end %>
-	<br>
-	<% end %>
+	<h1 class="world text-center half center-block">Cities Around the World</h1>
+
+<div class="container">
+	<div class= "row">
+			<% @cities.each do |city| %>
+				<div class="col-xs-4 center-block img-responsive">
+					<%= link_to(city) do %>
+							<%= image_tag city.img_url, size: "320x320"%>
+								<h2 class="center-block"> <span><%= city.name %></span></h2>
+				<% end %>
+				</div>
+			<% end %>
+	</div>
 </div>

@@ -1,32 +1,39 @@
-<h1 class="usercard">Hi, <%= @user.first_name %></h1>
-<hr>
-<div>
-	<%= image_tag @user.avatar.url, size: "320x426", class: "img-responsive" %>
-	<p><%= @user.first_name %> <%= @user.last_name %></p>
-	<p><strong>Email:</strong> <%= @user.email %></p>
-	<p><strong>Current City: </strong><%= link_to @user.current_city.name, city_path(@user.current_city) %></p>
-	<p><strong>Home City: </strong><%= link_to @user.home_city.name, city_path(@user.home_city) %></p>
-	<p class="small text-muted">Joined <%= time_ago_in_words(@user.created_at) %> ago</p>
-	<% if current_user == @user %>
-	<a href="/users/<%= @user.id %>/edit" class= "btn btn-default btn-lg">
-	  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
-	</a>
-	<% end %>
-</div>
-<hr>
-<div>
-	<strong>My Blog Posts:</strong>
-	<br><br>
-	<% if @user.entries.length == 0 %>
-		<p>No Entries</p>
-		<% else %> 
-		<% @entries.each do |entry| %>
-		 	<p style="margin-left: 40px"><%= link_to entry.title, city_entry_path(entry.city_id, entry) %></p>
-		 				<% if current_user == @user %>
-		 				<%= button_to "Delete", city_entry_path(entry.city, entry), method: :delete, class: "pull-left" %>
-						<%= button_to "Edit", edit_city_entry_path(entry.city, entry), method: :get, class: "pull-right" %>
-						<% end %>
-		 <br>
-		<% end %>	
-	<% end %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-6">
+			<h1 class="usercard prof">Hi, <%= @user.first_name %></h1>
+			<hr>
+
+			<%= image_tag @user.avatar.url, size: "320x426", class: "img-responsive prof" %>
+			<div class="prof info">
+				<h4><%= @user.first_name %> <%= @user.last_name %></h4>
+				<p><strong>Email:</strong> <%= @user.email %></p>
+				<p><strong>Current City: </strong><%= link_to @user.current_city.name, city_path(@user.current_city) %></p>
+				<p><strong>Home City: </strong><%= link_to @user.home_city.name, city_path(@user.home_city) %></p>
+				<p class="small text-muted">Joined <%= time_ago_in_words(@user.created_at) %> ago</p>
+				<% if current_user == @user %>
+				<a href="/users/<%= @user.id %>/edit" class= "btn btn-success btn-lg">
+				  <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
+				</a>
+				<% end %>
+			</div>
+		</div>
+			<div class="col-md-6  blogs">
+				<hr>
+				<strong class="title-a">My Blog Posts:</strong>
+				<% if @user.entries.length == 0 %>
+					<p class="title-a">No Entries</p>
+					<% else %> 
+					<% @entries.each do |entry| %>
+					 	<p style="margin-left: 40px"><%= link_to entry.title, city_entry_path(entry.city_id, entry) %></p>
+					 				<% if current_user == @user %>
+					 				<%= button_to "Delete", city_entry_path(entry.city, entry), method: :delete, class: "pull-left btn btn-danger pad" %>
+									<%= button_to "Edit", edit_city_entry_path(entry.city, entry), method: :get, class: "pull-left btn btn-success pad" %>
+									<% end %>
+					 <br>
+					<% end %>	
+				<% end %>
+			</div>
+	</div>
 </div>
