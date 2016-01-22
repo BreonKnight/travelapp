@@ -13,10 +13,11 @@
 <div>
 	<h1 class="world text-center">Cities Around the World</h1>
 	<% @cities.each do |city| %>
-	<div>
+	<div class="image">
 	<%= link_to(city) do %>
   		<%= content_tag(:div) do %>
    	 		<%= image_tag city.img_url, size: "320x426" %>
+   	 		<h2> <span><%= city.name %></span></h2>
   		<% end %>
 	<% end %>
 	<br>

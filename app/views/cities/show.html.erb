@@ -11,6 +11,8 @@
 
 
 <% @entries.reverse.each do |entry| %>
-	  <%= link_to entry.title, city_entry_path(entry.city_id, entry) %>
+		<div>
+	  	<%= link_to entry.title, city_entry_path(entry.city_id, entry) %>
 	  	<br>
+	  </div>
 <% end %>
