@@ -14,11 +14,11 @@
 	<h1 class="world text-center">Cities Around the World</h1>
 	<% @cities.each do |city| %>
 	<div>
-		<%= image_tag city.img_url, size: "320x426" %>
-		<%= link_to(city) do %>
-		<%= city.name %> <%= city.country %>
-	</div>
-	<br>
+	<%= link_to(city) do %>
+  		<%= content_tag(:div) do %>
+   	 		<%= image_tag city.img_url, size: "320x426" %>
+  		<% end %>
 	<% end %>
+	<br>
 	<% end %>
 </div>
