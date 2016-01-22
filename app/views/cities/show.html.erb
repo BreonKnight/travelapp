@@ -1,25 +1,30 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-6">
-		<h1 class="usercard"><%= @city.name %></h1>
-		<hr>
-
-		<%= image_tag @city.img_url, size: "320x426" %>
-		<br>
-		<br>
-		<%= link_to "Add Entry", new_city_entry_path(@city), class: "btn btn-default" %>
-		<hr>
-		<br>
-		<br>
-		</div>
-			<h1 class="usercard"> Entries</h1>
+		<div class="col-md-4">
+			<h1 class="usercard"><%= @city.name %></h1>
 			<hr>
-		<% @entries.reverse.each do |entry| %>
-			<div class="col-md-6 citiesblog pull-left">
-			  	<%= link_to entry.title, city_entry_path(entry.city_id, entry) %>
-			  	<br>
-			</div>
-		<% end %>
+
+			<%= image_tag @city.img_url, size: "320x426" %>
+			<br>
+			<br>
+			<%= link_to "Add Entry", new_city_entry_path(@city), class: "btn btn-default" %>
+			<hr>
+			<br>
+			<br>
+		</div>
+
+	<div class="col-md-8">
+		<h1 class="usercard">Entries</h1>
+		<hr>
+		<ul class="citiesblog pull-left">
+			<% @entries.reverse.each do |entry| %>
+				<li>
+				 	<%= link_to entry.title, city_entry_path(entry.city_id, entry) %>
+	 			</li>
+	 			<br> 	
+			<% end %>
+		</ul>
+	</div>
 	</div>
 </div>
