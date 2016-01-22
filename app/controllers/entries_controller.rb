@@ -46,7 +46,7 @@ class EntriesController < ApplicationController
   def update
     entry_id = params[:id]
     entry = Entry.find_by_id(entry_id)
-    user = entrry.user
+    user = entry.user
     if current_user == user
       redirect_to city_entry_path(entry.city, entry)
       entry.update_attributes(entry_params)
