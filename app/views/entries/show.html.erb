@@ -1,5 +1,7 @@
-<h1 class="entrynew"> <%= link_to @entry.city.name, city_path(@entry.city) %> Blog Entry</h1>
+<h1 class="text-center usercard entrynew"> <%= link_to @entry.city.name, city_path(@entry.city) %> Blog Entry</h1>
 <hr>
 <h3 class="text-center"><%= @entry.title %></h3>
 <h4 class="text-center">by <%= @user.first_name %> <%= @user.last_name %></h4>
+<div class="container">
 <p class="text-center"><%= @entry.body %></p>
+</div>

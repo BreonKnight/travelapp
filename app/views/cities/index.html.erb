@@ -1,5 +1,5 @@
 <div class="jumbotron" id="jumbo">
-	<h1 class="text-center">Travel With Me</h1>
+	<h1 class="text-center">Backpack Story<br><small class="text-center">Travel with me</small></h1>
 </div>
 
 <div class="jumbotron" id="flypic">
@@ -10,15 +10,18 @@
 	</div>
 </div>
 
-<div>
-	<h1 class="world text-center">Cities Around the World</h1>
-	<% @cities.each do |city| %>
-	<div>
-	<%= link_to(city) do %>
-  		<%= content_tag(:div) do %>
-   	 		<%= image_tag city.img_url, size: "320x426" %>
-  		<% end %>
-	<% end %>
-	<br>
-	<% end %>
+<div class="container">
+	<div class="row-fluid">
+		<h1 class="world text-center half center-block">Cities<br><small>Write you own story</small></h1>
+	</div>
+	<div class="row">
+			<% @cities.each do |city| %>
+				<div class="col-* col-md-4">
+					<%= link_to(city) do %>
+							<%= image_tag city.img_url, class: "img-responsive thumbnail"%>
+								<h2 class="center-block"> <span><%= city.name %></span></h2>
+				<% end %>
+				</div>
+			<% end %>
+	</div>
 </div>

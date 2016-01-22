@@ -4,19 +4,19 @@ class CitiesController < ApplicationController
 		@cities = City.all
 	end
 
-	def new
-		@city = City.new
-	end
-
-	def create
-		@city = City.new(city_params)
-		if @entry.save
-      redirect_to city_path
-    else
-    flash[:error] = "Successfully failed but..."
-    redirect_to new_city_path
-    end
-	end
+	# def new
+	# 	@city = City.new
+	# end
+	#
+	# def create
+	# 	@city = City.new(city_params)
+	# 	if @city.save
+  #     redirect_to city_path
+  #   else
+	#     flash[:error] = "Successfully failed but..."
+	#     redirect_to new_city_path
+  #   end
+	# end
 
 	def show
 		@city = City.find(params[:id])
