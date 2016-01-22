@@ -48,7 +48,7 @@ class EntriesController < ApplicationController
     entry_id = params[:id]
     entry = Entry.find_by_id(entry_id)
     entry.destroy
-    redirect_to city_path
+    redirect_to profile_path
   end
 
   private
