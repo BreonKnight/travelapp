@@ -20,6 +20,7 @@ $seaFoam: #1FB28C;
 
 body{
     padding-top: 0px;
+    padding-bottom: 50px;
     background-color: $white;
     font-family: 'Source Sans Pro', sans-serif;
 }
@@ -52,8 +53,40 @@ body{
     padding-bottom: 0;
 }
 
+.textSeafoam{
+    color: $seaFoam
+}
+
+.title-a{
+    padding-left: 20px;
+}
+
+.blogs{
+    padding-top:58px;
+}
+
+.info{
+    background-color: $black;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    width: 70%;
+    color: $white;
+}
+
+.prof{
+    margin-left: 20px;
+}
+
 .list-down{
 	padding-top: 15px;
+}
+
+.half{
+    width: 90%;
+}
+
+.reallyhalf{
+    width: 50%;
 }
 
 .yea{
@@ -84,21 +117,19 @@ li{
 }
 
 .image { 
-   position: relative; 
-   width: 100%; /* for IE 6 */
+    padding-right: 2px;
 }
 
 h2 { 
    position: absolute; 
    top: 200px; 
-   left: 0; 
-   width: 100%; 
+   left: 80px;
 }
 
 h2 span { 
    color: white; 
-   font: bold 24px/45px Helvetica, Sans-Serif; 
-   letter-spacing: -1px;  
+   // font: bold 24px/45px Helvetica, Sans-Serif; 
+   // letter-spacing: -1px;  
    background: rgb(0, 0, 0); /* fallback color */
    background: rgba(0, 0, 0, 0.7);
    padding: 10px; 
