@@ -41,16 +41,14 @@ class EntriesController < ApplicationController
     entry = Entry.find_by_id(entry_id)
 
     entry.update_attributes(entry_params)
-    redirect_to entry_path(entry)
+    redirect_to city_entry_path(entry.city, entry)
   end
 
   def destroy
     entry_id = params[:id]
     entry = Entry.find_by_id(entry_id)
-
     entry.destroy
-
-    redirect_to entries_path
+    redirect_to city_path
   end
 
   private
